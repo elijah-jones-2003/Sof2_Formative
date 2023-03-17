@@ -43,27 +43,16 @@ public class ManufacturingProcess
         }
         else{
             int min = Integer.MAX_VALUE;
-            min = Math.min(min, (minCost(newA, pB, sub, del, ins) * del));
-            min = Math.min(min, (minCost(pA, newB, sub, del, ins) * ins));
-            min = Math.min(min, (minCost(newA, newB, sub, del, ins) * sub));
+            min = Math.min(min, (minCost(newA, pB, sub, del, ins) * ins));
+            min = Math.min(min, (minCost(pA, newB, sub, del, ins) * del));
+            min = Math.min(min, (minCost(newA, newB, sub, del, ins)* sub));
             return min + 1;
         }
-        
     }
 
     public static void main(String[] args) {
-        String[] pA = {"p1", "p2", "p7", "p7", "p3"};
-        String[] pB = {"p1", "p5", "p2", "p6", "p3"};
-        String[] pC = {"p1", "p2", "p6", "p3", "p4"};
-        System.out.println(minCost(pA, pB, 1, 1, 1));
-        System.out.println(minCost(pA, pB, 10, 3, 2));
-        System.out.println(minCost(pA, pB, 1, 10, 2));
-        System.out.println(minCost(pB, pC, 4, 3, 2));
-        System.out.println(minCost(pB, pC, 2, 10, 1));
-        // 3
-        // 10
-        // 3
-        // 5
-        // 8
+        String[] pA = {"p2"};
+        String[] pB = {"p1"};
+        System.out.println(minCost(pA, pB, 5, 3, 1));
     }
 }
